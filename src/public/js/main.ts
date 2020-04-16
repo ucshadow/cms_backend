@@ -7,6 +7,7 @@ if (document.getElementById('bbb')) {
 }
 
 function checkLogStringUrl() {
+    console.log('called');
     if (!x) {
         x = setInterval(() => {
             counter++;
@@ -18,10 +19,10 @@ function checkLogStringUrl() {
                 .then(res => res.json()).then(res => {
                 if (res.outputStreamUrl) {
                     clearInterval(x);
-                    if(res.hasAdded && res.hasAdded.length > 0) {
-                        return
+                    if(!(res.hasAdded && res.hasAdded.length > 0)) {
+                        getData(res.outputStreamUrl);
                     }
-                    getData(res.outputStreamUrl);
+
 
                 }
             })
@@ -70,4 +71,4 @@ function getData(url: string) {
     }).catch(err => console.error(err))
 }
 
-checkLogStringUrl();
+// checkLogStringUrl();

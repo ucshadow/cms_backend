@@ -11,10 +11,11 @@ block content
             br
         else
             include partials/createCMS
+        form(action='/deleteCMS', method='POST')
+            button#bbb.btn.btn-primary Delete
     else
-        h1 Hi
-    form(action='/deleteCMS', method='POST')
-        button#bbb.btn.btn-primary Delete
+        h1 Please log in or create an account to use our services
+
 
     div#outLog
 
