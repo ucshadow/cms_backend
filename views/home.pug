@@ -2,17 +2,21 @@ extends layout
 
 block content
     if user
-        h1=(user.email)
+        h2=('Hello ' + user.email)
+        br
+        br
+        br
         if user.cmsUrl
             h2 Your CMS page
             br
             a(href=user.cmsUrl, style='font-size: 3rem')=(user.cmsUrl)
             br
             br
+            form(action='/deleteCMS', method='POST')
+                button#bbb.btn.btn-primary Delete
         else
             include partials/createCMS
-        form(action='/deleteCMS', method='POST')
-            button#bbb.btn.btn-primary Delete
+
     else
         h1 Please log in or create an account to use our services
 
