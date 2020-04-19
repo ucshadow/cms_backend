@@ -48,10 +48,11 @@ function getData(url: string) {
                                 .then(r => {
                                     document.getElementById("outLog").innerText += '\n Done! \n';
                                     let x = document.createElement('a');
-                                    x.href = r.data;
-                                    x.style.fontSize = '3rem';
-                                    x.innerText = r.data;
+                                    x.href = 'https://' + r.data + '.herokuapp.com';
+                                    x.style.fontSize = '5rem';
+                                    x.innerText = 'Deploy DONE! go to ' + r.data;
                                     document.getElementById("outLog").appendChild(x);
+                                    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
                                 });
                             controller.close();
                             return;
