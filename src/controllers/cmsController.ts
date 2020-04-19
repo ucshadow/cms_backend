@@ -116,7 +116,7 @@ export const createCMS = (req: Request, res: Response) => {
 
 export const getOutputStreamUrl = (req: Request, res: Response) => {
     // @ts-ignore
-    res.send({outputStreamUrl: outputStreamUrl, hasAdded: req.user.cmsUrl});
+    res.send({outputStreamUrl: outputStreamUrl});
 
 };
 

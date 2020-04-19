@@ -11,7 +11,7 @@ function checkLogStringUrl() {
     if (!x) {
         x = setInterval(() => {
             counter++;
-            if (counter > 30) {
+            if (counter > 50) {
                 counter = 0;
                 clearInterval(x)
             }
@@ -19,11 +19,8 @@ function checkLogStringUrl() {
                 .then(res => res.json()).then(res => {
                 if (res.outputStreamUrl) {
                     clearInterval(x);
-                    if(!(res.hasAdded && res.hasAdded.length > 0)) {
-                        getData(res.outputStreamUrl);
-                    }
-
-
+                    document.getElementById('bbb').setAttribute('disabled', true)
+                    getData(res.outputStreamUrl);
                 }
             })
         }, 2000)
@@ -71,4 +68,4 @@ function getData(url: string) {
     }).catch(err => console.error(err))
 }
 
-// checkLogStringUrl();
+checkLogStringUrl();
