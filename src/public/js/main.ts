@@ -19,7 +19,7 @@ function checkLogStringUrl() {
                 .then(res => res.json()).then(res => {
                 if (res.outputStreamUrl) {
                     clearInterval(x);
-                    document.getElementById('bbb').setAttribute('disabled', true)
+                    document.getElementById('bbb').setAttribute('disabled', 'true');
                     getData(res.outputStreamUrl);
                 }
             })
